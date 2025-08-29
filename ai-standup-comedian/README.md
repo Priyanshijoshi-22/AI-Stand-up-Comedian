@@ -71,17 +71,14 @@ ai-standup-comedian/
 
 ## Backend Integration (Stubs)
 
-### Node/Express
-- `backend/server.js` exposes routes:
-  - `POST /api/generate-script` → Call LLM (OpenAI, etc.).
-  - `POST /api/tts` → Call TTS provider; return a playable URL or base64.
-  - `POST /api/video` → Call avatar/video service.
-- Add your API keys as env vars. See inline TODOs in the file.
+##Python/Flask
 
-### Python/Flask
-- `backend/server.py` provides equivalent Flask routes for teams that prefer Python.
-
-> You can choose either Node or Python, or remove one. Both are here to show structure.
+backend/server_flask.py exposes routes:
+POST /api/generate-script → Calls the LLM (e.g., OpenAI or placeholder).
+POST /api/tts → Calls the Text-to-Speech provider and returns a playable audio response.
+POST /api/video → Connects to the avatar/video service if enabled.
+API keys are stored as environment variables for security.
+Inline TODOs are provided in the code to guide integration with real APIs..
 
 ---
 
