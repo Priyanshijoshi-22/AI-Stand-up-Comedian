@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Stand-up Comedian</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="container header">
+    <h1>🎤 AI Stand‑up Comedian</h1>
+    <p class="subtitle">Generate jokes, hear the set, and watch a virtual comic perform.</p>
+  </header>
+
+  <main class="container grid">
+    <section class="panel controls">
+      <h2>Setup</h2>
+      <label class="field">
+        <span>Topic</span>
+        <input id="topic" type="text" placeholder="e.g., exams, programming, college life"/>
+      </label>
+
+      <label class="field">
+        <span>Style</span>
+        <select id="style">
+          <option value="friendly">Family-Friendly</option>
+          <option value="observational">Observational</option>
+          <option value="sarcastic">Sarcastic</option>
+          <option value="edgy">Edgy (light)</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Length</span>
+        <select id="length">
+          <option value="short">~30 sec</option>
+          <option value="medium">~60 sec</option>
+          <option value="long">~90 sec</option>
+        </select>
+      </label>
+
+      <div class="buttons">
+        <button id="generateBtn">Generate Set</button>
+        <button id="performBtn" disabled>Perform</button>
+        <button id="stopBtn" disabled>Stop</button>
+      </div>
+      <p class="hint">Tip: You can replace the local script engine with your backend later.</p>
+    </section>
+
+    <section class="panel stage">
+      <h2>Stage</h2>
+      <div class="stage-wrap">
+        <!-- SVG avatar -->
+        <svg id="avatar" viewBox="0 0 200 240" aria-label="AI Comedian Avatar">
+          <!-- Spotlight glow -->
+          <defs>
+            <radialGradient id="spot" cx="50%" cy="20%" r="60%">
+              <stop offset="0%" stop-opacity="0.9" />
+              <stop offset="100%" stop-opacity="0.0" />
+            </radialGradient>
+          </defs>
+          <ellipse cx="100" cy="60" rx="95" ry="60" fill="url(#spot)" />
+
+          <!-- Body -->
+          <circle cx="100" cy="70" r="26" class="skin"/>
+          <rect x="62" y="98" width="76" height="70" rx="12" class="shirt"/>
+          <rect x="62" y="168" width="76" height="40" rx="8" class="pants"/>
+          <rect x="65" y="208" width="30" height="8" rx="4" class="shoe"/>
+          <rect x="105" y="208" width="30" height="8" rx="4" class="shoe"/>
+
+          <!-- Eyes -->
+          <circle cx="90" cy="68" r="3" class="eye"/>
+          <circle cx="110" cy="68" r="3" class="eye"/>
+
+          <!-- Mouth (animated by JS) -->
+          <rect id="mouth" x="88" y="78" width="24" height="4" rx="2" class="mouth"/>
+          
+          <!-- Mic stand -->
+          <rect x="140" y="70" width="3" height="110" class="mic-stand"/>
+          <circle cx="141.5" cy="65" r="6" class="mic-head"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="panel script">
+      <h2>Script</h2>
+      <textarea id="script" rows="14" spellcheck="false" placeholder="Generated stand-up script will appear here..."></textarea>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <span>Starter kit • Swap local generation with your AI backend anytime.</span>
+  </footer>
+
+  <script src="script_engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

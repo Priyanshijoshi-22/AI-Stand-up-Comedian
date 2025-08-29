@@ -1,0 +1,95 @@
+/* Basic reset */
+* { box-sizing: border-box; }
+:root {
+  --bg: #0b0b12;
+  --panel: #141425;
+  --text: #e7e7f0;
+  --muted: #a1a1b5;
+  --accent: #8b5cf6;
+  --accent-2: #22d3ee;
+  --good: #22c55e;
+  --danger: #ef4444;
+}
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 50% -10%, #1c1c3a 0%, var(--bg) 60%);
+  color: var(--text);
+}
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.header { text-align: center; padding: 32px 0 8px; }
+.subtitle { color: var(--muted); margin-top: 8px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.controls .field { display: grid; gap: 6px; margin-bottom: 12px; }
+.controls input, .controls select, textarea {
+  background: #0f0f1b;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+}
+.controls input:focus, .controls select:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.2);
+}
+
+.buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+button {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .05s ease, filter .2s;
+}
+button[disabled] { opacity: .5; cursor: not-allowed; }
+button:active { transform: translateY(1px); }
+.hint { color: var(--muted); font-size: 0.9rem; }
+
+.stage .stage-wrap {
+  background: radial-gradient(600px 240px at 50% 0%, rgba(255,255,255,.12) 0%, rgba(0,0,0,0) 60%), #0e0e18;
+  border-radius: 14px;
+  padding: 12px;
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+#avatar { width: 260px; height: auto; }
+.skin { fill: #f2c7a1; }
+.shirt { fill: #2a2a45; }
+.pants { fill: #1a1a2e; }
+.shoe { fill: #0b0b18; }
+.eye { fill: #0a0a0f; }
+.mouth { fill: #b22222; }
+.mic-stand { fill: #44475a; }
+.mic-head { fill: #9aa2b2; }
+
+.script textarea { width: 100%; resize: vertical; min-height: 280px; }
+
+.footer { padding: 18px 0 28px; color: var(--muted); text-align: center; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}
