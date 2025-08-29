@@ -114,3 +114,13 @@ function stopMouth(){
   mouth.setAttribute('height', '4');
   mouth.setAttribute('rx', '2');
 }
+
+
+// cd D:\ai-standup-comedian-python-backend\ai-standup-comedian\backend
+// venv\Scripts\activate
+// python server_flask.py
+
+// cd D:\ai-standup-comedian-python-backend\ai-standup-comedian\frontend
+// python -m http.server 5500
+
+// http://127.0.0.1:5500
